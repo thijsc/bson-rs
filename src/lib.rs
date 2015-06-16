@@ -45,6 +45,7 @@
 extern crate rustc_serialize;
 extern crate chrono;
 extern crate byteorder;
+extern crate linked_hash_map;
 
 pub use self::bson::{Bson, Document, Array};
 pub use self::encoder::{encode_document, EncoderResult, EncoderError};
@@ -54,4 +55,3 @@ pub mod spec;
 mod bson;
 mod encoder;
 mod decoder;
-mod ordered;

@@ -25,7 +25,7 @@ use chrono::{DateTime, UTC};
 use rustc_serialize::json;
 use rustc_serialize::hex::ToHex;
 
-use ordered::OrderedDocument;
+use linked_hash_map::LinkedHashMap;
 use spec::{ElementType, BinarySubtype};
 
 /// Possible BSON value types.
@@ -51,7 +51,7 @@ pub enum Bson {
 /// Alias for `Vec<Bson>`.
 pub type Array = Vec<Bson>;
 /// Alias for `OrderedDocument`.
-pub type Document = OrderedDocument;
+pub type Document = LinkedHashMap<String, Bson>;
 
 impl Bson {
     /// Get the `ElementType` of this value.
